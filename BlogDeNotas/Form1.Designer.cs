@@ -43,6 +43,9 @@
             this.txtNotaConsultar = new System.Windows.Forms.TextBox();
             this.txtFechaConsultar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.rbtnFecha = new System.Windows.Forms.RadioButton();
+            this.rbtonDescripcion = new System.Windows.Forms.RadioButton();
+            this.rdbtnAutor = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -67,7 +70,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(665, 43);
+            this.btnRemove.Location = new System.Drawing.Point(261, 106);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 3;
@@ -112,7 +115,7 @@
             // 
             this.cbConsultar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConsultar.FormattingEnabled = true;
-            this.cbConsultar.Location = new System.Drawing.Point(406, 45);
+            this.cbConsultar.Location = new System.Drawing.Point(569, 140);
             this.cbConsultar.Name = "cbConsultar";
             this.cbConsultar.Size = new System.Drawing.Size(195, 21);
             this.cbConsultar.TabIndex = 8;
@@ -121,7 +124,7 @@
             // lblNombreConsultar
             // 
             this.lblNombreConsultar.AutoSize = true;
-            this.lblNombreConsultar.Location = new System.Drawing.Point(403, 116);
+            this.lblNombreConsultar.Location = new System.Drawing.Point(566, 187);
             this.lblNombreConsultar.Name = "lblNombreConsultar";
             this.lblNombreConsultar.Size = new System.Drawing.Size(47, 13);
             this.lblNombreConsultar.TabIndex = 9;
@@ -131,18 +134,17 @@
             // lblConsultarNota
             // 
             this.lblConsultarNota.AutoSize = true;
-            this.lblConsultarNota.Location = new System.Drawing.Point(403, 207);
+            this.lblConsultarNota.Location = new System.Drawing.Point(566, 280);
             this.lblConsultarNota.Name = "lblConsultarNota";
             this.lblConsultarNota.Size = new System.Drawing.Size(33, 13);
             this.lblConsultarNota.TabIndex = 11;
             this.lblConsultarNota.Text = "Nota:";
             this.lblConsultarNota.Visible = false;
-            
             // 
             // lblConsultarFecha
             // 
             this.lblConsultarFecha.AutoSize = true;
-            this.lblConsultarFecha.Location = new System.Drawing.Point(403, 155);
+            this.lblConsultarFecha.Location = new System.Drawing.Point(566, 231);
             this.lblConsultarFecha.Name = "lblConsultarFecha";
             this.lblConsultarFecha.Size = new System.Drawing.Size(40, 13);
             this.lblConsultarFecha.TabIndex = 13;
@@ -151,7 +153,7 @@
             // 
             // txtNombreConsultar
             // 
-            this.txtNombreConsultar.Location = new System.Drawing.Point(461, 116);
+            this.txtNombreConsultar.Location = new System.Drawing.Point(624, 180);
             this.txtNombreConsultar.Name = "txtNombreConsultar";
             this.txtNombreConsultar.Size = new System.Drawing.Size(115, 20);
             this.txtNombreConsultar.TabIndex = 14;
@@ -159,7 +161,7 @@
             // 
             // txtNotaConsultar
             // 
-            this.txtNotaConsultar.Location = new System.Drawing.Point(461, 204);
+            this.txtNotaConsultar.Location = new System.Drawing.Point(624, 280);
             this.txtNotaConsultar.Multiline = true;
             this.txtNotaConsultar.Name = "txtNotaConsultar";
             this.txtNotaConsultar.Size = new System.Drawing.Size(115, 153);
@@ -168,29 +170,67 @@
             // 
             // txtFechaConsultar
             // 
-            this.txtFechaConsultar.Location = new System.Drawing.Point(461, 155);
+            this.txtFechaConsultar.Location = new System.Drawing.Point(624, 224);
             this.txtFechaConsultar.Name = "txtFechaConsultar";
             this.txtFechaConsultar.ReadOnly = true;
             this.txtFechaConsultar.Size = new System.Drawing.Size(115, 20);
             this.txtFechaConsultar.TabIndex = 16;
             this.txtFechaConsultar.Visible = false;
-            
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(403, 20);
+            this.label1.Location = new System.Drawing.Point(640, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 13);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "CONSULTAR (Por contenido de la nota)";
+            this.label1.Text = "CONSULTAR";
+            // 
+            // rbtnFecha
+            // 
+            this.rbtnFecha.AutoSize = true;
+            this.rbtnFecha.Location = new System.Drawing.Point(383, 25);
+            this.rbtnFecha.Name = "rbtnFecha";
+            this.rbtnFecha.Size = new System.Drawing.Size(120, 17);
+            this.rbtnFecha.TabIndex = 0;
+            this.rbtnFecha.TabStop = true;
+            this.rbtnFecha.Text = "Consultar por Fecha";
+            this.rbtnFecha.UseVisualStyleBackColor = true;
+            this.rbtnFecha.CheckedChanged += new System.EventHandler(this.rbtnFecha_CheckedChanged);
+            // 
+            // rbtonDescripcion
+            // 
+            this.rbtonDescripcion.AutoSize = true;
+            this.rbtonDescripcion.Location = new System.Drawing.Point(383, 119);
+            this.rbtonDescripcion.Name = "rbtonDescripcion";
+            this.rbtonDescripcion.Size = new System.Drawing.Size(146, 17);
+            this.rbtonDescripcion.TabIndex = 2;
+            this.rbtonDescripcion.TabStop = true;
+            this.rbtonDescripcion.Text = "Consultar por Descrpición";
+            this.rbtonDescripcion.UseVisualStyleBackColor = true;
+            this.rbtonDescripcion.CheckedChanged += new System.EventHandler(this.rbtonDescripcion_CheckedChanged);
+            // 
+            // rdbtnAutor
+            // 
+            this.rdbtnAutor.AutoSize = true;
+            this.rdbtnAutor.Location = new System.Drawing.Point(383, 70);
+            this.rdbtnAutor.Name = "rdbtnAutor";
+            this.rdbtnAutor.Size = new System.Drawing.Size(115, 17);
+            this.rdbtnAutor.TabIndex = 4;
+            this.rdbtnAutor.TabStop = true;
+            this.rdbtnAutor.Text = "Consultar por Autor";
+            this.rdbtnAutor.UseVisualStyleBackColor = true;
+            this.rdbtnAutor.CheckedChanged += new System.EventHandler(this.rdbtnAutor_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 651);
+            this.Controls.Add(this.rdbtnAutor);
+            this.Controls.Add(this.rbtonDescripcion);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.rbtnFecha);
             this.Controls.Add(this.txtFechaConsultar);
             this.Controls.Add(this.txtNotaConsultar);
             this.Controls.Add(this.txtNombreConsultar);
@@ -229,6 +269,9 @@
         private System.Windows.Forms.TextBox txtNotaConsultar;
         private System.Windows.Forms.TextBox txtFechaConsultar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rdbtnAutor;
+        private System.Windows.Forms.RadioButton rbtonDescripcion;
+        private System.Windows.Forms.RadioButton rbtnFecha;
     }
 }
 

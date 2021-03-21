@@ -37,7 +37,7 @@ namespace BlogDeNotas
                 nota.Fecha = DateTime.Now;
 
                 notas.Add(nota);
-                cbConsultar.Items.Add(nota.Descripcion);
+                actualizarCb();
             }
             else { MessageBox.Show("Rellena todos los campos");
             
@@ -106,9 +106,34 @@ namespace BlogDeNotas
         {
             //método que usamos para cuando borramos o modificamos para volver a llenar los campos del comboBox
             cbConsultar.Items.Clear();
-            foreach (Nota nota in notas)
+           
+            if (rbtnFecha.Checked)
             {
-                cbConsultar.Items.Add(nota.Descripcion);
+                foreach (Nota nota in notas)
+                {
+                    cbConsultar.Items.Add(nota.Fecha);
+                }
+
+            }
+            else
+            {
+                if (rbtonDescripcion.Checked)
+                {
+                    foreach (Nota nota in notas)
+                    {
+                        cbConsultar.Items.Add(nota.Descripcion);
+                    }
+                }
+                else
+                {
+                    if (rdbtnAutor.Checked)
+                    {
+                        foreach (Nota nota in notas)
+                        {
+                            cbConsultar.Items.Add(nota.Autor);
+                        }
+                    }
+                }
             }
         }
 
@@ -127,6 +152,23 @@ namespace BlogDeNotas
             }
         }
 
+        private void rbtnFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            actualizarCb();
+            Ocultartxt();
+        }
+
+        private void rdbtnAutor_CheckedChanged(object sender, EventArgs e)
+        {
+            actualizarCb();
+            Ocultartxt();
+        }
+
+        private void rbtonDescripcion_CheckedChanged(object sender, EventArgs e)
+        {
+            actualizarCb();
+            Ocultartxt();
+        }
     }
     
 }
