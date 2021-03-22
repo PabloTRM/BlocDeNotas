@@ -196,7 +196,7 @@
             this.rbtnFecha.TabStop = true;
             this.rbtnFecha.Text = "Consultar por Fecha";
             this.rbtnFecha.UseVisualStyleBackColor = true;
-            this.rbtnFecha.CheckedChanged += new System.EventHandler(this.rbtnFecha_CheckedChanged);
+            this.rbtnFecha.CheckedChanged += new System.EventHandler(this.cambiarCheckRadioBtn);
             // 
             // rbtonDescripcion
             // 
@@ -208,7 +208,7 @@
             this.rbtonDescripcion.TabStop = true;
             this.rbtonDescripcion.Text = "Consultar por Descrpición";
             this.rbtonDescripcion.UseVisualStyleBackColor = true;
-            this.rbtonDescripcion.CheckedChanged += new System.EventHandler(this.rbtonDescripcion_CheckedChanged);
+            this.rbtonDescripcion.CheckedChanged += new System.EventHandler(this.cambiarCheckRadioBtn);
             // 
             // rdbtnAutor
             // 
@@ -220,7 +220,7 @@
             this.rdbtnAutor.TabStop = true;
             this.rdbtnAutor.Text = "Consultar por Autor";
             this.rdbtnAutor.UseVisualStyleBackColor = true;
-            this.rdbtnAutor.CheckedChanged += new System.EventHandler(this.rdbtnAutor_CheckedChanged);
+            this.rdbtnAutor.CheckedChanged += new System.EventHandler(this.cambiarCheckRadioBtn);
             // 
             // Form1
             // 

@@ -53,8 +53,8 @@ namespace BlogDeNotas
             //rellenamos el comboBox recorriendo toda la lista de notas
             foreach (Nota nota in notas)
             {
-            
-              if(cbConsultar.Items.Count>0)
+
+                if (cbConsultar.Items.Count > 0)
                 {
                     mostrarTxt();
 
@@ -63,6 +63,7 @@ namespace BlogDeNotas
                     txtNotaConsultar.Text = nota.Descripcion;
 
                 }
+                
             }
         }
         //como repito el código en eliminar y en modificar lo he extraido a una función y luego la llamo en cada caso.
@@ -148,27 +149,19 @@ namespace BlogDeNotas
                 notas[cbConsultar.SelectedIndex].Autor = txtNombreConsultar.Text;
                 notas[cbConsultar.SelectedIndex].Descripcion = txtNotaConsultar.Text;
                 notas[cbConsultar.SelectedIndex].Fecha = DateTime.Now;
+               
+               
                 Ocultartxt();
             }
         }
 
-        private void rbtnFecha_CheckedChanged(object sender, EventArgs e)
+        private void cambiarCheckRadioBtn(object sender, EventArgs e)
         {
             actualizarCb();
             Ocultartxt();
         }
 
-        private void rdbtnAutor_CheckedChanged(object sender, EventArgs e)
-        {
-            actualizarCb();
-            Ocultartxt();
-        }
-
-        private void rbtonDescripcion_CheckedChanged(object sender, EventArgs e)
-        {
-            actualizarCb();
-            Ocultartxt();
-        }
+        
     }
     
 }
