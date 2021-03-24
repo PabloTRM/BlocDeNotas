@@ -49,22 +49,17 @@ namespace BlogDeNotas
 
         private void cbConsultar_SelectedIndexChanged(object sender, EventArgs e)
         {
-             descripcion = cbConsultar.Text;
-            //rellenamos el comboBox recorriendo toda la lista de notas
-            foreach (Nota nota in notas)
-            {
-
-                if (cbConsultar.Items.Count > 0)
-                {
+            int index = cbConsultar.SelectedIndex;
+            descripcion = cbConsultar.Text;
+            //rellenamos el comboBox 
+  
+                    Nota notaelegida = notas[index];
                     mostrarTxt();
+                   
+                    txtFechaConsultar.Text = notaelegida.Fecha.ToString();
+                    txtNombreConsultar.Text = notaelegida.Autor;
+                    txtNotaConsultar.Text = notaelegida.Descripcion;
 
-                    txtFechaConsultar.Text = nota.Fecha.ToString();
-                    txtNombreConsultar.Text = nota.Autor;
-                    txtNotaConsultar.Text = nota.Descripcion;
-
-                }
-                
-            }
         }
         //como repito el código en eliminar y en modificar lo he extraido a una función y luego la llamo en cada caso.
         private void mostrarTxt()
@@ -110,6 +105,7 @@ namespace BlogDeNotas
            
             if (rbtnFecha.Checked)
             {
+                cbConsultar.Items.Clear();
                 foreach (Nota nota in notas)
                 {
                     cbConsultar.Items.Add(nota.Fecha);
@@ -120,8 +116,9 @@ namespace BlogDeNotas
             {
                 if (rbtonDescripcion.Checked)
                 {
+                    cbConsultar.Items.Clear();
                     foreach (Nota nota in notas)
-                    {
+                    {   
                         cbConsultar.Items.Add(nota.Descripcion);
                     }
                 }
@@ -129,6 +126,7 @@ namespace BlogDeNotas
                 {
                     if (rdbtnAutor.Checked)
                     {
+                        cbConsultar.Items.Clear();
                         foreach (Nota nota in notas)
                         {
                             cbConsultar.Items.Add(nota.Autor);
